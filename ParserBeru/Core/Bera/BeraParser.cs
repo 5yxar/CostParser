@@ -20,6 +20,11 @@ namespace ParserBeru.Core.Bera
                 list.Add(item.TextContent);
             }
 
+            var prices = document.QuerySelectorAll("span").Where(item => item.ClassName != null && item.ClassName.Contains("_23tNgir0Bf pv8IvbZFh- _withAbsoluteDiscount Tuefsruoma"));
+            foreach (var price in prices)
+            {
+                list.Add(price.TextContent);
+            }
             return list.ToArray();
         }
     }
